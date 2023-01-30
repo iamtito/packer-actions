@@ -47,6 +47,7 @@ build {
       "sudo apt-get install -y openjdk-8-jdk",
       "echo Install Open JDK 8 - SUCCESS",
       "sudo apt-get install -y docker",
+      "echo Install Docker - SUCCESS",
     ]
   }
 }
