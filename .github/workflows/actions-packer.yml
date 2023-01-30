@@ -36,7 +36,7 @@ jobs:
           arguments: -syntax-only
           target: build.pkr.hcl
 
-      # build artifact
+      # build artifact.
       - name: Build Artifact
         uses: hashicorp/packer-github-actions@master
         with:

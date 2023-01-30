@@ -17,7 +17,7 @@ locals {
 }
 
 source "amazon-ebs" "ubuntu_java" {
-  ami_name      = "${var.ami_prefix}-${local.timestamp}"
+  ami_name      = "${var.ami_prefix}"
   instance_type = "t2.micro"
   region        = "us-east-1"
   source_ami_filter {
@@ -46,6 +46,7 @@ build {
       "sudo apt-get update",
       "sudo apt-get install -y openjdk-8-jdk",
       "echo Install Open JDK 8 - SUCCESS",
+      "sudo apt-get install -y docker",
     ]
   }
 }
