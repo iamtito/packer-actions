@@ -25,12 +25,14 @@ jobs:
       # Initialize Packer templates
       - name: Initialize Packer Template
         uses: hashicorp/packer-github-actions@master
+        working-directory: .github
         with:
           command: init
 
       # validate templates
       - name: Validate Template
         uses: hashicorp/packer-github-actions@master
+        working-directory: .github
         with:
           command: validate
           arguments: -syntax-only
@@ -39,6 +41,7 @@ jobs:
       # build artifact.
       - name: Build Artifact
         uses: hashicorp/packer-github-actions@master
+        working-directory: .github
         with:
           command: build
           arguments: "-color=false -on-error=abort -var checkout=${{ github.sha }}"
