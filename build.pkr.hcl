@@ -60,10 +60,10 @@ build {
       "echo Install Docker and docker-compose - START",
       "sleep 30",
       "sudo yum update -y",
-      "sudo yum install -y docker",
+      "sudo yum install -y docker git",
       "sudo service docker start",
       "sudo systemctl enable docker",
-      "sudo curl -L https://github.com/docker/compose/releases/latest/download/docker-compose-$(uname -s)-$(uname -m) -o /bin/docker-compose && chmod +x /bin/docker-compose && docker-compose --version",
+      "sudo curl -L https://github.com/docker/compose/releases/latest/download/docker-compose-$(uname -s)-$(uname -m) -o /bin/docker-compose && sudo chmod +x /bin/docker-compose && sudo docker-compose --version",
       "echo Install Docker - SUCCESS",
       "git clone https://${var.ghcred}@github.com/iamtito/packer-actions",
     ]
