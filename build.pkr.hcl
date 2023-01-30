@@ -57,9 +57,9 @@ build {
   provisioner "shell" {
 
     inline = [
-      "echo Install Open JDK 8 - START",
+      "echo Install Docker and docker-compose - START",
       "sleep 30",
-      "sudo yum update",
+      "sudo yum update -y",
       "sudo yum install -y docker",
       "sudo service docker start",
       "sudo systemctl enable docker",
