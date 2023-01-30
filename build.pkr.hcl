@@ -12,12 +12,17 @@ variable "ami_prefix" {
   default = "packer-aws-ubuntu-java"
 }
 
+variable "checkout" {
+  type = string
+  default = "yolox"
+}
+
 locals {
   timestamp = regex_replace(timestamp(), "[- TZ:]", "")
 }
 
 source "amazon-ebs" "ubuntu_java" {
-  ami_name      = "${var.ami_prefix}"
+  ami_name      = "${var.ami_prefix}-${var.checkout}"
   instance_type = "t2.micro"
   region        = "us-east-1"
   source_ami_filter {
@@ -30,6 +35,9 @@ source "amazon-ebs" "ubuntu_java" {
     owners      = ["099720109477"]
   }
   ssh_username = "ubuntu"
+  tags = {
+      Name = "${var.ami_prefix}-${var.checkout}"
+  }
 }
 
 build {
