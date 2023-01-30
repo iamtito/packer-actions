@@ -34,7 +34,7 @@ jobs:
         with:
           command: validate
           arguments: -syntax-only
-          target: aws-demo.pkr.hcl
+          target: build.pkr.hcl
 
       # build artifact
       - name: Build Artifact
@@ -42,6 +42,6 @@ jobs:
         with:
           command: build
           arguments: "-color=false -on-error=abort"
-          target: aws-demo.pkr.hcl
+          target: build.pkr.hcl
         env:
           PACKER_LOG: 1
