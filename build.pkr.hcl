@@ -58,7 +58,7 @@ build {
 
     inline = [
       "echo Install Open JDK 8 - START",
-      "sleep 10",
+      "sleep 30",
       "sudo yum update",
       "sudo yum install -y docker",
       "sudo service docker start",
